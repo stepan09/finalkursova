@@ -4,7 +4,6 @@
 
 package oli.sport.sport.model;
 
-import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
@@ -35,7 +34,6 @@ public class Sportsman implements Serializable {
 
     @Column(name = "birth_date", nullable = false, updatable = false)
     @Temporal(TemporalType.DATE)
-    @CreatedDate
     private Date birthDate;
 
     @ManyToMany(cascade = CascadeType.ALL)

@@ -36,11 +36,10 @@ public class Coach implements Serializable {
 
     @Column(name = "birth_date",nullable = false, updatable = false)
     @Temporal(TemporalType.DATE)
-    @CreatedDate
     private Date birthDate;
 
-    /*@ManyToMany(mappedBy = "coaches")
-    private List<Sportsman> sportsmen;*/
+    @ManyToMany(mappedBy = "coaches")
+    private List<Sportsman> sportsmen;
 
     public Coach() {
     }
@@ -50,9 +49,7 @@ public class Coach implements Serializable {
         this.firstName = firstName;
         this.middleName = middleName;
         this.birthDate = birthDate;
-/*
         this.sportsmen = sportsmen;
-*/
     }
 
     public Long getCoachId() {
@@ -95,11 +92,11 @@ public class Coach implements Serializable {
         this.birthDate = birthDate;
     }
 
-    /*public List<Sportsman> getSportsmen() {
+    public List<Sportsman> getSportsmen() {
         return sportsmen;
     }
 
     public void setSportsmen(List<Sportsman> sportsmen) {
         this.sportsmen = sportsmen;
-    }*/
+    }
 }

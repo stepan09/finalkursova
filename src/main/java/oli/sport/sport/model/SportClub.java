@@ -27,9 +27,8 @@ public class SportClub implements Serializable {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "foundation_date", nullable = false, updatable = false)
+    @Column(name = "foundation_date", nullable = false)
     @Temporal(TemporalType.DATE)
-    @CreatedDate
     private Date foundationDate;
 
     @OneToMany(mappedBy = "sportClub", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
